@@ -9,7 +9,7 @@ Frontend: Javascript with React library + Vite and Axios (Microsoft Visual Studi
 
 Backend:  Java (version 21.0.4) with framework Springboot and JWT authentication with password encryption (Intelij Ultimate IDEA).
 
-Database: PostgreSQL, The name of the database is elearningwebapp (Pgadmin4).
+Database: PostgreSQL, the name of the database is elearningwebapp (Pgadmin4).
 
 Digital assistant: Botpress platform.
 
