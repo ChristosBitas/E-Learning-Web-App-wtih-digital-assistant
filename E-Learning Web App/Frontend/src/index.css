@@ -1,0 +1,1237 @@
+/* ---------------------------------- */
+/* Global Styles (Applies to all pages) */
+/* ---------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevents horizontal overflow */
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden; /* Ensures no scrolling beyond viewport height */
+  background-color: #c2d5ef; /* Global background color */
+}
+
+/* ---------------------------------- */
+/* Navbar Styles (Shared for all pages) */
+/* ---------------------------------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 70px;
+  background-color: rgb(29, 75, 118); /* Navbar background color */
+  box-shadow: 0 2px 4px rgba(12, 1, 1, 3); /* Adds shadow below the navbar */
+  font-size: 20px; /* Font size for navbar items */
+}
+
+.navbar-brand a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff; /* White color for brand text */
+  text-decoration: none;
+}
+
+.navbar-ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-ul li {
+  margin-left: 20px; /* Spacing between navbar items */
+}
+
+.navbar-ul li a {
+  text-decoration: none;
+  color: #666; /* Default color for links */
+  transition: color 0.5s; /* Smooth transition on hover */
+}
+
+.navbar-ul li a:hover {
+  color: #ffffff; /* Change color to white on hover */
+}
+
+.navbar-ul li a.active {
+  color: #ffffff; /* Highlight active link */
+}
+
+.logout-link {
+  cursor: pointer;
+  color: #666; /* Matches other navigation links */
+}
+
+.logout-link:hover {
+  color: #ffffff; /* Changes color to white on hover */
+}
+ 
+/* Custom logout message style   */
+
+.logout-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logout-modal-content {
+  background-color: #ffffff; /* White background to match page styling */
+  padding: 30px;
+  border-radius: 15px; /* Softer border radius */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+  width: 400px;
+}
+
+.logout-modal-content h3 {
+  color: #1d4b76; /* Dark blue heading color */
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.logout-modal-content p {
+  font-size: 16px;
+  color: #333; /* Darker grey for text */
+  margin-bottom: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.confirm-logout-button, .cancel-logout-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px; /* Softer rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  font-weight: bold; /* Emphasize buttons */
+}
+
+.confirm-logout-button {
+  background-color: #e74c3c; /* Red for confirmation */
+  color: white;
+}
+
+.confirm-logout-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+.cancel-logout-button {
+  background-color: #1d4b76; /* Match the primary blue */
+  color: white;
+}
+
+.cancel-logout-button:hover {
+  background-color: #163a5e; /* Darker blue on hover */
+}
+
+/* Ensure modal stays above other content */
+.logout-modal {
+  z-index: 9999; /* Ensure it is above all other content */
+}
+
+/* ---------------------------------- */
+/* Home Page Styles */
+/* ---------------------------------- */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px); /* Ensures content fits the screen excluding the footer */
+}
+
+.header-banner {
+  background-image: url("../src/assets/images/quizMenuLogo.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* Full height of viewport */
+  width: 100vw; /* Full width of viewport */
+  text-align: center;
+}
+
+.header-banner h1, .header-banner h3 {
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.header-banner h1 {
+  font-size: 70px;
+}
+
+.header-banner h3 {
+  font-size: 50px;
+}
+
+/* ---------------------------------- */
+/* Footer Styles (Shared across pages) */
+/* ---------------------------------- */
+
+.footer {
+  background-color: #1d4b76;
+  color: #f0e8e8;
+  padding: 20px;
+  text-align: center;
+  position: fixed; /* Sticks the footer to the bottom */
+  bottom: 0;
+  width: 100%;
+  font-weight: 500;
+}
+
+/* ---------------------------------- */
+/* Alert/Notification Styles (Shared for all pages) */
+/* ---------------------------------- */
+
+.custom-alert {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.custom-alert-success {
+  background-color: #28a745; /* Green for success */
+  color: white;
+}
+
+.custom-alert-error {
+  background-color: #f8d7da; /* Red for error */
+  color: #721c24;
+}
+
+.alert-close-btn {
+    background-color: #721c24;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.alert-close-btn:hover {
+    background-color: #a94442;
+}
+
+
+.delete-confirmation-buttons {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 10px; /* Add space between buttons */
+  margin-top: 10px; /* Add some space above the buttons */
+}
+
+.confirm-button, .cancel-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.confirm-button {
+  background-color: #e74c3c; /* Match button color */
+  color: white;
+}
+
+.cancel-button {
+  background-color: #1d4b76;
+  color: white;
+}
+
+.confirm-button:hover, .cancel-button:hover {
+  opacity: 0.9; /* Slight transparency effect on hover */
+}
+
+/* ---------------------------------- */
+/* Admin Page Styles (Manage Users, Manage Quiz) */
+/* ---------------------------------- */
+
+.admin-page {
+  max-width: 600px;
+  margin: 200px auto;
+  padding: 100px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  text-align: center;
+}
+
+.welcome-message {
+  font-size: 2em;
+  color: #1d4b76; /* Primary text color */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.admin-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+}
+
+.admin-button {
+  padding: 15px 30px;
+  font-size: 1em;
+  color: white;
+  background-color: #1d4b76; /* Button color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-button:hover {
+  background-color: rgb(34, 80, 128); /* Darker button color on hover */
+}
+
+/* ---------------------------------- */
+/* Manage Quiz styles */
+/* ---------------------------------- */
+
+.manage-quiz-page {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.manage-quiz-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 10px; /* Add space between the buttons */
+}
+
+/* White background wrapper for the title and buttons */
+.manage-quiz-container {
+  background-color: white; /* White background */
+  padding: 100px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow */
+  text-align: center;
+  margin:  200px auto;
+}
+
+.manage-quiz-page h1 {
+  margin-bottom: 20px; /* Add space between the Manage Quiz label and the buttons */
+  color: #1d4b76; /* Keep text color consistent */
+}
+
+.manage-quiz-buttons button {
+  background-color: #1d4b76;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.manage-quiz-buttons button:hover {
+  background-color: #163a5e; /* Darken on hover */
+}
+
+/* Add Quiz Form Styling */
+
+.add-question-section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Adds vertical space between input fields */
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+.add-question-section h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.add-question-section input[type="text"],
+.add-question-section input[type="number"] {
+  width: 80%; /* Adjust the width to be larger */
+  max-width: 600px; /* Max width for larger screens */
+  padding: 10px; /* Add padding for a better user experience */
+  font-size: 1.1rem; /* Increase font size */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.add-question-section .centered-button {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adds space between Add and Back buttons */
+  margin-top: 20px;
+}
+
+.add-question-section .centered-button button {
+  width: 150px;
+  height: 50px;
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #1d4b76; /* Button color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-question-section .centered-button button:hover {
+  background-color: #163a5e; /* Darken button on hover */
+}
+
+/* Update/Delete Quiz Table Styling */
+
+
+.update-question-section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 2000px;
+  margin-top: 20px;
+}
+
+.update-question-section h2 {
+  
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container thead th {
+  background-color: #1d4b76;
+  color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.table-container tbody td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.update-button, .delete-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-button {
+  background-color: #1d4b76;
+  color: white;
+  margin-right: 10px; /* Add margin to create space between buttons */
+}
+
+.update-button:hover {
+  background-color: #163a5e; /* Darken on hover */
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c0392b; /* Darken on hover */
+}
+
+/* Scrollable container for the table */
+.scrollable-table {
+  max-height: 400px; /* You can adjust the height */
+  overflow-y: auto; /* Add vertical scrollbar when necessary */
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background-color: #1d4b76; /* Red button */  
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #163a5e; /* Darker red on hover */
+}
+
+.centered-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ---------------------------------- */
+/* Manage Users style */
+/* ---------------------------------- */
+
+.manage-users-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; /* Center all content within the page */
+}
+
+.manage-users-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.manage-users-page table th,
+.manage-users-page table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center; /* Center align text in table headers and cells */
+}
+
+.manage-users-page table th {
+  background-color: #1d4b76; /* Blue background for header */
+  color: white;
+}
+
+.manage-users-page table td {
+  background-color: #ffffff; /* White background for cells */
+  color: #333; /* Dark text color for better contrast */
+}
+
+
+.table-container2 {
+  max-height: 400px; /* Set the max-height for the table container */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  margin-bottom: 20px; /* Add some space below the table */
+}
+
+.manage-users-page .delete-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.manage-users-page .back-button {
+  background-color: #1d4b76;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px; /* Add margin to separate the back button from the table */
+}
+
+.delete-confirmation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.delete-confirmation-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  width: 400px;
+}
+
+.delete-confirmation-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.confirm-delete-button,
+.cancel-delete-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.confirm-delete-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.cancel-delete-button {
+  background-color: #1d4b76;
+  color: white;
+}
+
+
+/* ---------------------------------- */
+/* Profile Page Styles */
+/* ---------------------------------- */
+
+.profile-page {
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+}
+
+.profile-page h2 {
+  font-size: 30px; /* Adjusted font size */
+  color: #1d4b76; /* Primary color */
+  margin-bottom: 20px;
+}
+
+.profile-details {
+  background-color: #f0f0f0; /* Gray background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  margin-top: 20px;
+}
+
+.profile-details h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #1d4b76;
+}
+
+.profile-details p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+  text-align: left; /* Align text to the left */
+}
+
+.profile-details strong {
+  font-weight: bold;
+  color: #1d4b76;
+}
+
+.profile-details .profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Ensures both username and email start from the same left alignment */
+}
+
+.profile-details p span {
+  display: inline-block;
+  width: 100px; /* Adjust this width to align the label text */
+}
+
+.centered-button {
+  text-align: center;
+  margin-top: 20px; /* Space between details and button */
+}
+
+/* Style the Edit Profile button */
+
+.edit-profile-button {
+  background-color: #1d4b76;
+  color: white;
+  border: none;
+  padding: 10px 30px; /* Increased padding for better feel */
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-profile-button:hover {
+  background-color: #004687; /* Darker blue on hover */
+}
+
+.error-message {
+  color: red;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* ---------------------------------- */
+/* Edit Profile Page Styles */
+/* ---------------------------------- */
+
+.edit-profile-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 100px);
+  padding: 20px;
+  background-color: #c2d5ef;
+}
+
+.edit-profile-form {
+  width: 100%;
+  max-width: 450px; /* Reduced slightly for a more compact design */
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px; /* Softer corner radius */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow for depth */
+}
+
+h2 {
+  font-size: 28px;
+  color: #1d4b76;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: bold; /* Enhanced title weight */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px; /* Increased padding for better input feel */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out; /* Smooth border change on focus */
+}
+
+.form-control:focus {
+  border-color: #1d4b76; /* Color change on focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(29, 75, 118, 0.3); /* Subtle focus shadow */
+}
+
+.update-profile-button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 12px; /* More padding for the button */
+  font-size: 18px; /* Increased font size */
+  border: none;
+  border-radius: 8px; /* Softer border radius */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold; /* Stronger font for emphasis */
+}
+
+.update-profile-button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+  font-size: 18px;
+  color: #1d4b76;
+  font-weight: bold;
+}
+
+
+/* ---------------------------------- */
+/* Login and Register Pages */
+/* ---------------------------------- */
+
+.auth-container {
+  max-width: 400px;
+  padding: 20px;
+  border: 0.5px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 200px auto 50px auto;
+}
+
+.auth-container h2 {
+  margin: 15px;
+  text-align: center;
+  color: #1d4b76;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #1d4b76;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 800;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(21, 78, 159);
+}
+
+.register-link {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.register-link a {
+  color: #1d4b76;
+  text-decoration: none;
+}
+
+/* ---------------------------------- */
+/* Quiz - Questions Page Styles */
+/* ---------------------------------- */
+
+.questions-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px); /* Adjust for space between navbar and footer */
+  padding: 20px;
+  background-color: #c2d5ef; /* Background color specifically for the Questions page */
+}
+
+.questions-page-container .app {
+  background-color: #1d4b76; /* Updated color to match navbar and footer */
+  width: 500px; /* Increased width to accommodate timer and question */
+  min-height: 200px;
+  border-radius: 15px;
+  padding: 30px; /* Padding adjusted for better layout */
+  box-shadow: 10px 10px 42px rgba(0, 0, 0, 0.75); /* Shadow for the box */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keep content spaced within the box */
+}
+
+.questions-page-container .score-section {
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.question-count-timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.timer {
+  color: white; /* Set Time Left text color to white */
+  background: #1d4b76; /* Match the background color to your app */
+  border: 1px solid #b8daff;
+  height: 45px;
+  padding: 0 12px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.timer_sec {
+  font-size: 20px;
+  font-weight: 500;
+  height: 35px;
+  width: 50px;
+  color: white; /* Set timer counter text color to white */
+  border-radius: 0 5px 5px 0; /* Rounded right corners */
+  line-height: 35px;
+  text-align: center;
+  background: transparent; /* Remove the grey background */
+  border: none; /* Remove border from the timer */
+  user-select: none;
+}
+
+.questions-page-container .question-section {
+  width: 100%;
+  position: relative;
+}
+
+.questions-page-container .question-count {
+  color: #ffffff; /* Set question number color to white */
+}
+
+.questions-page-container .question-count span {
+  font-size: 28px;
+}
+
+.questions-page-container .question-text {
+  margin-bottom: 12px;
+  text-align: center;
+  color: #ffffff; /* Set question text color to white */
+}
+
+.questions-page-container .answer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spacing between buttons */
+}
+
+.questions-page-container button {
+  width: 100%;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #252d4a;
+  border-radius: 15px;
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid #234668;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.questions-page-container button:hover {
+  background-color: #555e7d;
+}
+
+.questions-page-container button:focus {
+  outline: none;
+}
+
+.questions-page-container .correct {
+  background-color: #2f922f;
+}
+
+.questions-page-container .incorrect {
+  background-color: #ff3333;
+}
+
+.score-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.score-text {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.end-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+}
+
+.home-button,
+.restart-button {
+  background-color: #1d4b76;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover,
+.restart-button:hover {
+  background-color: #163a5e;
+}
+
+/* ---------------------------------- */
+/* Quiz - Scoreboard Styles */
+/* ---------------------------------- */
+
+.scoreboard-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4; /* Light background for the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 800px; /* Limit the maximum width */
+  margin: 20px auto; /* Center align with margin */
+}
+
+.scoreboard-table-container {
+  max-height: 400px; /* Set the maximum height for the table container */
+  overflow-y: auto;  /* Enable vertical scroll */
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.scoreboard-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.scoreboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #fff; /* White background for the table */
+  border-radius: 8px; /* Rounded corners for table */
+  overflow: hidden; /* Ensure rounded corners are visible */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center; /* Center the content inside the table */
+}
+
+.scoreboard-table th,
+.scoreboard-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px; /* Padding for table cells */
+  text-align: center; /* Center text in table cells */
+  font-size: 1rem;
+}
+
+.scoreboard-table th {
+  background-color: #1d4b76; /* Primary color for header */
+  color: #fff; /* White text for header */
+  font-weight: bold;
+  text-align: center; /* Center text in headers */
+}
+
+.scoreboard-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.scoreboard-table tr:hover {
+  background-color: #e2e6ea; /* Highlight on hover */
+}
+
+.scoreboard-table td {
+  color: #555;
+  text-align: center; /* Ensure text in the data columns is centered */
+}
+
+.scoreboard-table td[colspan="2"] {
+  text-align: center;
+  color: #888; /* Gray text color */
+}
+
+/* ---------------------------------- */
+/* Responsive style */
+/* ---------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* Adjusting admin page buttons for smaller screens */
+  .admin-actions {
+      flex-direction: column;
+      gap: 10px; /* Reducing gap for better spacing on small screens */
+  }
+
+  .admin-button {
+      width: 100%; /* Full width button on smaller screens */
+      padding: 12px;
+      font-size: 0.9em; /* Slightly smaller text */
+  }
+
+  /* Reducing input padding for smaller screens */
+  .form-group input {
+      padding: 8px; /* Ensuring a compact layout */
+  }
+
+  /* Auth (Login/Register) container adjustments */
+  .auth-container {
+      border-radius: 0; /* Remove border radius for full-screen feel */
+      border: none;
+      padding: 10px; /* Compact padding */
+  }
+
+  .auth-container h2 {
+      font-size: 24px;
+      color: #1d4b76; /* Adjusting color for consistency */
+  }
+
+  /* Reducing input padding for smaller form fields */
+  .form-group input {
+      padding: 8px;
+  }
+
+  /* Adjusting submit button for smaller screens */
+  button[type="submit"] {
+      padding: 11px;
+  }
+
+  /* Header banner text adjustments for smaller screens */
+  .header-banner h1 {
+      font-size: 36px; /* Smaller title font size */
+  }
+
+  .header-banner h3 {
+      font-size: 24px; /* Smaller subtitle font size */
+  }
+
+  /* Manage Quiz Page */
+  .manage-quiz-page {
+      padding: 15px; /* Adjusting padding for smaller screens */
+  }
+
+  .table-container {
+      max-width: 100%; /* Ensure table fits within the screen width */
+      padding: 10px; /* Reducing padding for smaller screens */
+  }
+
+  .table-wrapper {
+      max-height: 300px; /* Reducing max height of table wrapper */
+  }
+
+  /* Adjusting table cells for smaller screens */
+  tbody td {
+      padding: 5px; /* Reducing padding inside table cells */
+  }
+
+  /* Adjusting admin quiz and users page button sizes */
+  .update-button, .delete-button {
+      padding: 5px; /* Smaller button padding */
+      font-size: 0.9em; /* Smaller text for buttons */
+  }
+
+  /* Navbar adjustments */
+  .navbar {
+      padding: 5px 10px; /* Reduced padding for smaller screens */
+  }
+
+  .navbar-ul {
+      justify-content: space-between; /* Spread navbar items evenly */
+  }
+
+  .navbar-ul li {
+      flex: 1 1 22%; /* Each item takes a percentage of space */
+      margin-left: 0;
+      margin-bottom: 10px;
+      text-align: center;
+  }
+
+  .navbar-ul li a {
+      display: block; /* Stack navbar items on smaller screens */
+  }
+
+  /* Profile Page */
+  .profile-page {
+      max-width: 90%; /* Reducing max width for mobile */
+      padding: 20px; /* Adjusted padding for smaller screens */
+  }
+
+  /* Adjust profile buttons on mobile */
+  .profile-actions button {
+      width: 100%;
+      padding: 10px;
+  }
+
+  /* Edit Profile Page */
+  .edit-profile-page-container {
+      padding: 15px; /* Compact padding for smaller screens */
+  }
+
+  /* Registration page adjustments */
+  .auth-container {
+      padding: 15px;
+      max-width: 100%; /* Fits the screen */
+  }
+
+  /* Adjust form control padding */
+  .form-control {
+      padding: 8px; /* Reduce padding for form inputs */
+  }
+
+  .update-profile-button {
+      padding: 10px; /* Adjust button padding */
+  }
+}
