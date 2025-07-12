@@ -15,6 +15,6 @@ Digital assistant: Botpress platform.
 
 Postman has been used for testing Backend functions.
 
-The avalaible roles are user and admin.
+The available roles are user and admin.
 
 That's all of my work for my Master Thesis. I hope you enjoyed it!
